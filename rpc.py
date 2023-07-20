@@ -2,6 +2,8 @@ import random
 import os
 import asyncio
 class Game:
+    user_count = 0
+    comp_count = 0
     def __init__(self):
         self.user_count = 0
         self.comp_count = 0
@@ -31,7 +33,7 @@ class Game:
         # print(f"User - {self.user_count} Computer - {self.comp_count} ")
         if not user_choice:
             os.system("cls")
-            print("Please enter a valid input")            
+            print("Please enter a valid input : ")            
             self.validation()
         else:            
             print(f"User choice - {self.dic[user_choice]} Computer Choice - {self.dic[comp_choice]}")
@@ -44,8 +46,10 @@ class Game:
             print(f"User count - {self.user_count} Computer count - {self.comp_count}")
             play_again = input("\n\nDo you want to play again - Type 1 for Yes or 0 for No : ")
             os.system("cls")
+            #if user want to play again
             if play_again == '1':
                 self.validation()
+            # if user don't want to play again
             else:
                 os.system("cls")
                 if self.user_count > self.comp_count:
