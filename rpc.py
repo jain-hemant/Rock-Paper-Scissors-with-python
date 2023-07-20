@@ -44,22 +44,28 @@ class Game:
             else:
                 self.comp_count += 1
             print(f"User count - {self.user_count} Computer count - {self.comp_count}")
-            play_again = input("\n\nDo you want to play again - Type 1 for Yes or 0 for No : ")
+            self.play_game_again()
+    def play_game_again(self):
+        # os.system("cls")
+        play_again = input("\n\nDo you want to play again - Type 1 for Yes or 0 for No : ")
+        os.system("cls")
+        #if user want to play again
+        if play_again == '1':
+            self.validation()
+        # if user don't want to play again
+        elif play_again == '0':
             os.system("cls")
-            #if user want to play again
-            if play_again == '1':
-                self.validation()
-            # if user don't want to play again
+            if self.user_count > self.comp_count:
+                print("You Win : ",self.user_count)
+            elif self.user_count < self.comp_count:
+                print("Computer Win : ",self.comp_count)
             else:
-                os.system("cls")
-                if self.user_count > self.comp_count:
-                    print("You Win : ",self.user_count)
-                elif self.user_count < self.comp_count:
-                    print("Computer Win : ",self.comp_count)
-                else:
-                    print(f"Tie ---> User : {self.user_count} Computer : {self.comp_count}" )
-                
-                input("Press any key to exit: ")
+                print(f"Tie ---> User : {self.user_count} Computer : {self.comp_count}" )
+        else:
+            self.play_game_again()
+            
+        input("Press any key to exit: ")
+        exit()
 
             
 if __name__ == "__main__":
