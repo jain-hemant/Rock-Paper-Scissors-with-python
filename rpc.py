@@ -43,6 +43,7 @@ class Game:
                 self.comp_count += 1
             print(f"User count - {self.user_count} Computer count - {self.comp_count}")
             play_again = input("\n\nDo you want to play again - Type 1 for Yes or 0 for No : ")
+            os.system("cls")
             if play_again == '1':
                 self.validation()
             else:
