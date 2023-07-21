@@ -1,6 +1,6 @@
 import random
 import os
-import asyncio
+# import asyncio
 class Game:
     user_count = 0
     comp_count = 0
@@ -36,14 +36,14 @@ class Game:
             print("Please enter a valid input : ")            
             self.validation()
         else:            
-            print(f"User choice - {self.dic[user_choice]} Computer Choice - {self.dic[comp_choice]}")
+            print(f"\nUser choice - {self.dic[user_choice]} Computer Choice - {self.dic[comp_choice]}")
             if user_choice == comp_choice:
                 pass
             elif user_choice == "rock" and comp_choice == "scissor" or user_choice == "scissor"  and comp_choice == "paper" and user_choice == "paper" and comp_choice == "rock":
                 self.user_count += 1
             else:
                 self.comp_count += 1
-            print(f"User count - {self.user_count} Computer count - {self.comp_count}")
+            # print(f"User count - {self.user_count} Computer count - {self.comp_count}")
             self.play_game_again()
     def play_game_again(self):
         # os.system("cls")
@@ -64,7 +64,7 @@ class Game:
         else:
             self.play_game_again()
             
-        input("Press any key to exit: ")
+        input("\n\nPress any key to exit: \n\n")
         exit()
 
             
